@@ -7,18 +7,31 @@ public class BallScript : MonoBehaviour
 
     public Transform Me;
     public GameObject Ball;
-    bool segz = false;
+    bool did = false;
+    public float LifeTime;
 
+    void Start()
+    {
+
+        LifeTime = Random.Range(5, 20);
+    }
+
+    void Update()
+    {
+
+        LifeTime -= 1 * Time.deltaTime;
+        // Destroy(gameObject, LifeTime);
+    }
 
     void OnTriggerEnter(Collider other)
     {
 
-        if(segz == false)
+        if(did == false)
         {
 
             Vector3 spawnPlace = new Vector3(Random.Range(Me.position.x + 1, Me.position.x - 1), Random.Range(Me.position.y + 1, Me.position.y - 1), Random.Range(Me.position.z + 1, Me.position.z - 1));
             Instantiate(Ball, spawnPlace, Quaternion.identity);
-            segz = true;
+            did = true;
         }else
         {
             

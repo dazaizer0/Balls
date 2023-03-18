@@ -459,7 +459,6 @@ GameObject:
   - component: {fileID: 3313799276036580218}
   - component: {fileID: 3313799276036580217}
   - component: {fileID: 5767103546455854918}
-  - component: {fileID: 8610715645905575691}
   - component: {fileID: 3313799276036580216}
   - component: {fileID: 3313799276036580215}
   - component: {fileID: 8499589836070526946}
@@ -577,7 +576,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Me: {fileID: 3313799276036580219}
-  Ball: {fileID: 3313799276036580214}
+  Ball: {fileID: 3313799275705839325, guid: c01db4fdf0d0a3847aec01b32dd34d6d, type: 3}
+  LifeTime: 0
 --- !u!114 &5767103547357387589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,7 +591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Me: {fileID: 3313799275202164600}
-  Ball: {fileID: 3313799275202164597}
+  Ball: {fileID: 3313799275705839325, guid: c01db4fdf0d0a3847aec01b32dd34d6d, type: 3}
+  LifeTime: 0
 --- !u!65 &8499589835169024993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -618,16 +619,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0401711, y: 1.0342066, z: 1.1423377}
   m_Center: {x: -0.0013389587, y: -0.0030508041, z: -0.00082343817}
---- !u!114 &8610715645905575691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3313799276036580214}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60892f567e9669d41900e309c38138ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5

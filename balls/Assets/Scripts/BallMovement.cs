@@ -11,7 +11,7 @@ public class BallMovement : MonoBehaviour
     
     private void Start()
     {
-        speed = Random.Range(3, 6);
+        speed = Random.Range(1, 5);
         direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
     }
 
