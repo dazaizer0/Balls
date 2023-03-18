@@ -63,7 +63,7 @@ public class Ball : MonoBehaviour
             }else
             {
             
-                print("multiplication ended");
+                //print("Parent: multiplication ended");
             }
         }else
         {
@@ -74,7 +74,7 @@ public class Ball : MonoBehaviour
                 mr.material.color = Color.red;
                 Vector3 spawnPlace = new Vector3(Random.Range(ThisBall.position.x + 1, ThisBall.position.x - 1), Random.Range(ThisBall.position.y + 1, ThisBall.position.y - 1), Random.Range(ThisBall.position.z + 1, ThisBall.position.z - 1));
             
-                fertility = Random.Range(2, 3);
+                fertility = Random.Range(1, 3);
                 int i = 0;
                 while (i != fertility)
                 {
@@ -87,7 +87,7 @@ public class Ball : MonoBehaviour
             }else
             {
             
-                print("multiplication ended");
+                //Debug.Log("Child: multiplication ended");
             }
         }
     }
