@@ -30,7 +30,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
 
-        LifeTime = Random.Range(25, 30);
+        LifeTime = Random.Range(15, 25);
 
         if(!isParent)
         {
@@ -68,10 +68,10 @@ public class Ball : MonoBehaviour
     void Update()
     {
 
-        // age += 1 * Time.deltaTime / 30;
+        /*age += 1 * Time.deltaTime / 30;
 
         Vector3 scale = new Vector3(age, age, age);
-        transform.localScale = scale;
+        transform.localScale = scale;*/
 
         if(isParent)
         {
@@ -112,18 +112,18 @@ public class Ball : MonoBehaviour
             Debug.Log("Parent: multiplication ended");
         }
 
-        if(age > 2 && !isParent)
+        /*if(age > 2 && !isParent)
         {
 
-            /*Destroy(gameObject);
+            Destroy(gameObject);
             Destroy(other);
 
             Vector3 spawnPlace = new Vector3(Random.Range(ThisBall.position.x + 1, ThisBall.position.x - 1), Random.Range(ThisBall.position.y + 1, ThisBall.position.y - 1), Random.Range(ThisBall.position.z + 1, ThisBall.position.z - 1));
-            Instantiate(Star, spawnPlace, Quaternion.identity);*/
+            Instantiate(Star, spawnPlace, Quaternion.identity);
 
             Debug.Log("Star created");
 
-        }
+        }*/
     }
 
      void OnTriggerExit(Collider other)
@@ -147,4 +147,4 @@ public class Ball : MonoBehaviour
             mr.material.color = Color.blue;
         }
      }
-}
+} // zadnych dup chlopcze

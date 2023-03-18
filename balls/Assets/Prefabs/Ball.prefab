@@ -54,6 +54,7 @@ MonoBehaviour:
   ThisBall: {fileID: 3313799275705839312}
   BallToSpawn: {fileID: 3313799275705839325}
   Star: {fileID: 5712736842691639751, guid: d60594818c1b95642805f6090c6cb2ff, type: 3}
+  LifeTime: 0
   fertility: 0
   Kind: 
   age: 1
