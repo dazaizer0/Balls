@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1234883064428594136, guid: 43e2a2dab04058d4d95035cd462110a8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1234883064428594139, guid: 43e2a2dab04058d4d95035cd462110a8, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0
@@ -618,7 +622,11 @@ MonoBehaviour:
   mr: {fileID: 3313799276036580217}
   ThisBall: {fileID: 3313799276036580219}
   BallToSpawn: {fileID: 3313799275705839325, guid: c01db4fdf0d0a3847aec01b32dd34d6d, type: 3}
+  Star: {fileID: 5712736842691639751, guid: d60594818c1b95642805f6090c6cb2ff, type: 3}
+  LifeTime: 0
   fertility: 0
+  Kind: 
+  age: 1
 --- !u!114 &5767103547357387589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,7 +643,11 @@ MonoBehaviour:
   mr: {fileID: 3313799275202164602}
   ThisBall: {fileID: 3313799276036580219}
   BallToSpawn: {fileID: 3313799275705839325, guid: c01db4fdf0d0a3847aec01b32dd34d6d, type: 3}
+  Star: {fileID: 5712736842691639751, guid: d60594818c1b95642805f6090c6cb2ff, type: 3}
+  LifeTime: 0
   fertility: 0
+  Kind: 
+  age: 1
 --- !u!65 &8499589835169024993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -683,7 +695,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3313799276036580214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60892f567e9669d41900e309c38138ec, type: 3}
   m_Name: 

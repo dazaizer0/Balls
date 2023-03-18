@@ -12,24 +12,71 @@ public class Ball : MonoBehaviour
     [Header("Objects")]
     public Transform ThisBall;
     public GameObject BallToSpawn;
+    public GameObject Star;
 
     [Header("Stats")]
     bool multiplied = false;
-    private float LifeTime;
+    public float LifeTime;
     public int fertility;
+
+    [Header("Stats")]
+    public string Kind;
+    int KindOfBall;
+
+    // big and chunky
+    public float age = 1;
 
 
     void Start()
     {
-        LifeTime = Random.Range(25, 35);
+
+        LifeTime = Random.Range(25, 30);
+
+        if(!isParent)
+        {
+
+            KindOfBall = Random.Range(1, 4);
+        }else if(isParent)
+        {
+            KindOfBall = 0;
+        }
+
+        if(KindOfBall == 0)
+        {
+
+            Kind = "parent";
+            mr.material.color = Color.blue;
+        }else if(KindOfBall == 1)
+        {
+
+            Kind = "white";
+            mr.material.color = Color.white;
+        }else if(KindOfBall == 2)
+        {
+
+            Kind = "green";
+            mr.material.color = Color.green;
+        }else if(KindOfBall == 3)
+        {
+
+            mr.material.color = Color.yellow;
+            Kind = "yellow";
+        }
+
     }
 
     void Update()
     {
 
+        // age += 1 * Time.deltaTime / 30;
+
+        Vector3 scale = new Vector3(age, age, age);
+        transform.localScale = scale;
+
         if(isParent)
         {
 
+            mr.material.color = Color.blue;
             LifeTime = 7;
         }else
         {
@@ -41,68 +88,63 @@ public class Ball : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(!isParent)
+
+        if(multiplied == false)
         {
 
-            if(multiplied == false)
+            mr.material.color = Color.red;
+            Vector3 spawnPlace = new Vector3(Random.Range(ThisBall.position.x + 1, ThisBall.position.x - 1), Random.Range(ThisBall.position.y + 1, ThisBall.position.y - 1), Random.Range(ThisBall.position.z + 1, ThisBall.position.z - 1));
+            
+
+            fertility = Random.Range(1, 2);
+            int i = 0;
+            while (i != fertility)
             {
 
-                mr.material.color = Color.red;
-                Vector3 spawnPlace = new Vector3(Random.Range(ThisBall.position.x + 1, ThisBall.position.x - 1), Random.Range(ThisBall.position.y + 1, ThisBall.position.y - 1), Random.Range(ThisBall.position.z + 1, ThisBall.position.z - 1));
-            
-                fertility = Random.Range(1, 2);
-                int i = 0;
-                while (i != fertility)
-                {
-
-                    Instantiate(BallToSpawn, spawnPlace, Quaternion.identity);
-                    i++;
-                }
-
-                multiplied = true;
-            }else
-            {
-            
-                //print("Parent: multiplication ended");
+                Instantiate(BallToSpawn, spawnPlace, Quaternion.identity);
+                i++;
             }
+
+            multiplied = true;
         }else
         {
-
-            if(multiplied == false)
-            {
-
-                mr.material.color = Color.red;
-                Vector3 spawnPlace = new Vector3(Random.Range(ThisBall.position.x + 1, ThisBall.position.x - 1), Random.Range(ThisBall.position.y + 1, ThisBall.position.y - 1), Random.Range(ThisBall.position.z + 1, ThisBall.position.z - 1));
             
-                fertility = Random.Range(1, 3);
-                int i = 0;
-                while (i != fertility)
-                {
+            Debug.Log("Parent: multiplication ended");
+        }
 
-                    Instantiate(BallToSpawn, spawnPlace, Quaternion.identity);
-                    i++;
-                }
+        if(age > 2 && !isParent)
+        {
 
-                multiplied = true;
-            }else
-            {
-            
-                //Debug.Log("Child: multiplication ended");
-            }
+            /*Destroy(gameObject);
+            Destroy(other);
+
+            Vector3 spawnPlace = new Vector3(Random.Range(ThisBall.position.x + 1, ThisBall.position.x - 1), Random.Range(ThisBall.position.y + 1, ThisBall.position.y - 1), Random.Range(ThisBall.position.z + 1, ThisBall.position.z - 1));
+            Instantiate(Star, spawnPlace, Quaternion.identity);*/
+
+            Debug.Log("Star created");
+
         }
     }
 
      void OnTriggerExit(Collider other)
      {
 
-        if(isParent)
+        if(Kind == "white")
         {
-            
-            mr.material.color = Color.blue;
-        }else
+
+            mr.material.color = Color.white;
+        }else if(Kind == "green")
         {
 
             mr.material.color = Color.green;
+        }else if(Kind == "yellow")
+        {
+
+            mr.material.color = Color.yellow;
+        }else if(Kind == "yellow")
+        {
+
+            mr.material.color = Color.blue;
         }
      }
 }
