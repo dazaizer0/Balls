@@ -5,19 +5,24 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
 
-    public float speed; // = 5f;
+    Rigidbody rb;
+    public float speed;
     private Vector3 direction;
 
     
     private void Start()
     {
-        speed = Random.Range(1, 5);
-        direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
+
+        rb = GetComponent<Rigidbody>();
+
+        speed = Random.Range(1, speed);  // or 9
+        // direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
+        rb.velocity = (new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized) * speed;
     }
 
     private void Update()
     {
 
-        transform.position += direction * speed * Time.deltaTime;
+        // transform.position += direction * speed * Time.deltaTime;
     }
 }

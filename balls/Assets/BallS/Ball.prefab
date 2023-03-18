@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41042d6e135d054ea5b9b5dd8dc2679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isParent: 0
   mr: {fileID: 1469666469805881613}
   ThisBall: {fileID: 3313799275705839312}
   BallToSpawn: {fileID: 3313799275705839325}
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60892f567e9669d41900e309c38138ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10000
 --- !u!135 &3313799275705839315
 SphereCollider:
   m_ObjectHideFlags: 0
