@@ -6,7 +6,7 @@ public class BallMovement : MonoBehaviour
 {
 
     Rigidbody rb;
-    public float speed;
+    public float speed; // speed = Range(1, 9) or Range(1, 10000)
     private Vector3 direction;
 
     
@@ -15,14 +15,7 @@ public class BallMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
-        speed = Random.Range(1, speed);  // or 9
-        // direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
+        speed = Random.Range(1, speed);
         rb.velocity = (new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized) * speed;
-    }
-
-    private void Update()
-    {
-
-        // transform.position += direction * speed * Time.deltaTime;
     }
 }
