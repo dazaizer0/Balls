@@ -7,12 +7,12 @@ public class Ball : MonoBehaviour
     public bool isParent = false;
 
     [Header("Compotents")]
+    public GameManager gm;
     public MeshRenderer mr;
 
     [Header("Objects")]
     public Transform ThisBall;
     public GameObject BallToSpawn;
-    public GameObject Star;
 
     [Header("Stats")]
     bool multiplied = false;
@@ -103,6 +103,9 @@ public class Ball : MonoBehaviour
 
                 Instantiate(BallToSpawn, spawnPlace, Quaternion.identity);
                 i++;
+                
+                //gm.bals += 1;
+                //gm.actbals += 1;
             }
 
             multiplied = true;
@@ -111,19 +114,6 @@ public class Ball : MonoBehaviour
             
             Debug.Log("Parent: multiplication ended");
         }
-
-        /*if(age > 2 && !isParent)
-        {
-
-            Destroy(gameObject);
-            Destroy(other);
-
-            Vector3 spawnPlace = new Vector3(Random.Range(ThisBall.position.x + 1, ThisBall.position.x - 1), Random.Range(ThisBall.position.y + 1, ThisBall.position.y - 1), Random.Range(ThisBall.position.z + 1, ThisBall.position.z - 1));
-            Instantiate(Star, spawnPlace, Quaternion.identity);
-
-            Debug.Log("Star created");
-
-        }*/
     }
 
      void OnTriggerExit(Collider other)

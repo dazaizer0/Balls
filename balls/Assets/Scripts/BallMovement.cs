@@ -6,7 +6,9 @@ public class BallMovement : MonoBehaviour
 {
 
     Rigidbody rb;
-    public float speed; // speed = Range(1, 9) or Range(1, 10000)
+
+    [Header("speed: from 9 to 10000")]
+    public float speed;
     private Vector3 direction;
 
     
