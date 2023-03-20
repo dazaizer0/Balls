@@ -11,11 +11,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI FPS;
     public float fps;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
 
