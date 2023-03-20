@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public bool isParent = false;
+    //public bool connected = false;
 
     [Header("Compotents")]
     public GameManager gm;
@@ -68,9 +69,9 @@ public class Ball : MonoBehaviour
     void Update()
     {
 
-        /*age += 1 * Time.deltaTime / 30;
+        age += 1 * Time.deltaTime / 30;
 
-        Vector3 scale = new Vector3(age, age, age);
+        /*Vector3 scale = new Vector3(age, age, age);
         transform.localScale = scale;*/
 
         if(isParent)
@@ -114,6 +115,15 @@ public class Ball : MonoBehaviour
             
             Debug.Log("Parent: multiplication ended");
         }
+
+        /*if(age > 1.5)
+        {
+
+            other.transform.SetParent(transform);
+            connected = true;
+            Debug.Log("connected");
+
+        }*/
     }
 
      void OnTriggerExit(Collider other)
