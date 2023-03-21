@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(FpsCounter());
-        FPS.text = fps + ".fps";
+        fps = (int)(1f / Time.unscaledDeltaTime);
     }
 
     public void QuitProgram()
@@ -31,16 +31,16 @@ public class GameManager : MonoBehaviour
         Debug.Log("Quit");
     }
 
-    public void FPScounter()
+    public void fps_to_string()
     {
 
-        fps = (int)(1f / Time.unscaledDeltaTime);
+        FPS.text = fps + ".fps";
     }
 
     IEnumerator FpsCounter()
     {
         
-        FPScounter();
+        fps_to_string();
         yield return new WaitForSeconds(2);
     }
 }

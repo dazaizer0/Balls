@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isParent: 0
+  gm: {fileID: 0}
   mr: {fileID: 1469666469805881613}
   ThisBall: {fileID: 3313799275705839312}
   BallToSpawn: {fileID: 3313799275705839325}
@@ -174,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df9e92df9cc63a84e91c64bbe55e56d2, type: 2}
+  - {fileID: 2100000, guid: 1dedc4ce6844ffb48a0aa9b6834e9441, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

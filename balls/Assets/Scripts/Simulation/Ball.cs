@@ -132,19 +132,19 @@ public class Ball : MonoBehaviour
         if(Kind == "white")
         {
 
-            mr.material.color = Color.white;
+            mr.material.color = Color.cyan;
         }else if(Kind == "green")
         {
 
-            mr.material.color = Color.green;
+            mr.material.color = Color.cyan;
         }else if(Kind == "yellow")
         {
 
-            mr.material.color = Color.yellow;
+            mr.material.color = Color.cyan;
         }else if(Kind == "yellow")
         {
 
-            mr.material.color = Color.blue;
+            mr.material.color = Color.cyan;
         }
      }
 } // zadnych dup chlopcze

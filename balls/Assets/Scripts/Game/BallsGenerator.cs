@@ -1,46 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class BallsGenerator : MonoBehaviour // Marcel odpalaes gre z poprawkami? twoj kod nie dziala ;-/  : wracamy do starego
+public class BallsGenerator : MonoBehaviour
 {
 
-    public GameObject ballToSpawn;
-    public int numerOfBallsOnOneChunk;
+    public GameObject ball_to_spawn;
+    Vector3 spawn_position;
 
     void Update()
     {
 
-        Vector3 spawnPosition = new Vector3(Random.Range(transform.position.x + 256, transform.position.x - 256), Random.Range(transform.position.y + 256, transform.position.y - 256), Random.Range(transform.position.z + 256, transform.position.z - 256));
+        if (BallGenerationSettings.instance.balls_amount < 0) return;
 
-        for (int i = 0; i < numerOfBallsOnOneChunk; i ++)
-        {
-
-            Instantiate(ballToSpawn, spawnPosition, Quaternion.identity);
-        }
-    }
-
-/*  public GameObject ballToSpawn;
-    public int numerOfBallsOnOneChunk;
-    public float player_radius; // to dodac 0.5(promien kulki do zespawnienia) = minimalna odleglosc zespawnianej kulki
-    public float max_spawn_distance;
-
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
-        Vector3 spawnPosition = transform.position + ((new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f))).normalized * Random.Range(player_radius + 0.5f, max_spawn_distance));
-
-        for (int i = 0; i < numerOfBallsOnOneChunk; i ++)
-        {
-
-            Instantiate(ballToSpawn, spawnPosition, Quaternion.identity);
-        }
-    }*/ 
+        spawn_position = transform.position + ((new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f))).normalized * Random.Range(BallGenerationSettings.instance.min_ball_range, BallGenerationSettings.instance.max_ball_range));
+        Instantiate(ball_to_spawn, spawn_position, Quaternion.identity);
+        BallGenerationSettings.instance.balls_amount -= 1;
+    } 
 }

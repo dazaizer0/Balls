@@ -112,4 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parent: 0
-  max_survival_distance: 256
+  max_survival_distance: 64
