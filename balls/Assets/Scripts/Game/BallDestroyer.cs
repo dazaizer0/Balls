@@ -12,7 +12,7 @@ public class BallDestroyer : MonoBehaviour
 
     void Start()
     {
-        cam = GameObject.Find("Camera");
+        cam = GameObject.Find("PlayerCamera");
     }
 
     void Update()

@@ -9,8 +9,13 @@ public class GameManager : MonoBehaviour
 {
 
     public TextMeshProUGUI FPS;
-    public float fps;
+    public float fps, update_delay_s = 0.7f;
+    
 
+    private void Start()
+    {
+        StartCoroutine(FpsCounter());
+    }
     void Update()
     {
 
@@ -19,8 +24,7 @@ public class GameManager : MonoBehaviour
 
             QuitProgram();
         }
-
-        StartCoroutine(FpsCounter());
+        // w dokumentacji unity startowali coroutine-y tylko w Start(), wiec zrobi³em to samo plus while w IEnumerator-rze
         fps = (int)(1f / Time.unscaledDeltaTime);
     }
 
@@ -39,8 +43,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FpsCounter()
     {
-        
-        fps_to_string();
-        yield return new WaitForSeconds(2);
+        while (true)
+        {
+            fps_to_string();
+            yield return new WaitForSeconds(2);
+        }
     }
 }
