@@ -14,6 +14,8 @@ public class player_movement : MonoBehaviour
 
     private Rigidbody rb;
 
+    public Camera camera;  
+
     private void Start()
     {
 
@@ -24,22 +26,24 @@ public class player_movement : MonoBehaviour
     void Update()
     {
 
+        Vector3 cameraDirection = camera.transform.forward;
+        Vector3 forwardForce = transform.forward * speed;
+        cameraDirection.y = 0;  
         
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded && jumps_left > 0)
         {
 
             jumps_left -= 1;
             rb.AddForce(jump * jump_force, ForceMode.Impulse);
+            rb.AddForce(forwardForce, ForceMode.Acceleration);
+        }
+
+        if (cameraDirection.magnitude > 0.1f)
+        {
+            transform.rotation = Quaternion.LookRotation(cameraDirection);
         }
     }
 
-    private void FixedUpdate()
-    {
-
-        Vector2 axis = new Vector2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")) * speed;
-        rb.velocity = (Vector3.forward * axis.x + Camera.main.transform.right * axis.y + Vector3.up * rb.velocity.y);;
-    }
-    
     void OnCollisionStay()
     {
 
