@@ -51,6 +51,15 @@ public class player_movement : MonoBehaviour
         isGrounded = true;
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        
+        if(other.tag == "CanGrab")
+        {
+
+            // force up
+        }
+    }
 
     /*Rigidbody rb;
     public float jump_delta_v;

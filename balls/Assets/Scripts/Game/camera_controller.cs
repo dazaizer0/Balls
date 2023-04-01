@@ -12,6 +12,7 @@ public class camera_controller : MonoBehaviour
     float yRotation = 0f;
     public float camera_smooth;
 
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -19,8 +20,11 @@ public class camera_controller : MonoBehaviour
 
     void Update()
     {
-        Vector3 pos = Vector3.MoveTowards(transform.position, camera_pos.position, camera_smooth * Time.deltaTime);
-        GetComponent<Rigidbody>().MovePosition(pos);
+
+        //Vector3 pos = Vector3.MoveTowards(transform.position, camera_pos.position, camera_smooth * Time.deltaTime);
+        //GetComponent<Rigidbody>().MovePosition(pos);
+
+        transform.position = camera_pos.position; //inna opcja kamery
 
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
