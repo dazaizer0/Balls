@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
 
-            QuitProgram();
+            SceneManager.LoadScene(0);
+            // QuitProgram();
         }
         // w dokumentacji unity startowali coroutine-y tylko w Start(), wiec zrobi�em to samo plus while w IEnumerator-rze
         fps = (int)(1f / Time.unscaledDeltaTime);
@@ -39,6 +40,19 @@ public class GameManager : MonoBehaviour
     {
 
         FPS.text = fps + ".fps";
+    }
+
+    public void to_simulation()
+    {
+
+        Debug.Log("to_simulation");
+        SceneManager.LoadScene(1);
+    }
+    public void to_game()
+    {
+
+        Debug.Log("to_game");
+        SceneManager.LoadScene(2);
     }
 
     IEnumerator FpsCounter()

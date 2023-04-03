@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dani_grappling_hook : MonoBehaviour
+public class grappling_hook : MonoBehaviour
 {
     private LineRenderer lr;
     private Vector3 grapplePoint;
