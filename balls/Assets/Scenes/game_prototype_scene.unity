@@ -813,6 +813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579312351}
   - component: {fileID: 579312350}
+  - component: {fileID: 579312352}
   m_Layer: 0
   m_Name: WorldManager
   m_TagString: GameController
@@ -851,6 +852,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &579312352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579312349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c067efbeeb552241925a349799fe49e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FPS: {fileID: 895276420}
+  fps: 0
+  update_delay_s: 0.7
 --- !u!1 &673977472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEKST
+  m_text: fps_
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1620,7 +1636,6 @@ GameObject:
   - component: {fileID: 1234883063610237698}
   - component: {fileID: 1234883063610237706}
   - component: {fileID: 1234883063610237704}
-  - component: {fileID: 1234883063610237705}
   - component: {fileID: 1234883063610237707}
   m_Layer: 0
   m_Name: PlayerCamera
@@ -1658,21 +1673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball_to_spawn: {fileID: 6413500829356180721, guid: 40f92d23746b48245a5e165ae2a7d026, type: 3}
---- !u!114 &1234883063610237705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234883063610237700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c067efbeeb552241925a349799fe49e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FPS: {fileID: 895276420}
-  fps: 0
-  update_delay_s: 0.7
 --- !u!114 &1234883063610237706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2d0ce323f0430498420f87f235d613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 555
+  sensitivity: 450
   player: {fileID: 119207061}
   camera_pos: {fileID: 1464277852}
   camera_smooth: 1000
