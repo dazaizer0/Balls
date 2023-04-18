@@ -7,7 +7,6 @@ public class Lights : MonoBehaviour
 
     public GameObject Car;
     public GameObject Light;
-    public float speed = 2f;
 
     void Start() 
     {
